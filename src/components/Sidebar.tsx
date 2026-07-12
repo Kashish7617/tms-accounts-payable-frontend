@@ -82,7 +82,7 @@ export default function Sidebar({
       </div>
 
       <div className="border-t border-slate-100 p-3">
-        <button
+        {/* <button
           type="button"
           onClick={() => onNavigate("settings")}
           className={`mb-2 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium ${
@@ -91,7 +91,7 @@ export default function Sidebar({
         >
           <Settings size={17} />
           Settings
-        </button>
+        </button> */}
         <div className="flex items-center gap-2 rounded-lg px-3 py-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 text-xs font-semibold text-slate-600">
             {userName

@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [summary, setSummary] = useState<DashboardSummary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+console.log('summary', summary)
   useEffect(() => {
     const controller = new AbortController();
 
@@ -112,9 +112,9 @@ export default function Dashboard() {
           <div className="rounded-xl border border-slate-200 bg-white p-4 lg:col-span-2">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-sm font-semibold text-slate-900">Recent Transactions</h2>
-              <button type="button" className="text-xs font-medium text-blue-600 hover:underline">
+              {/* <button type="button" className="text-xs font-medium text-blue-600 hover:underline">
                 View All
-              </button>
+              </button> */}
             </div>
             <table className="w-full text-left text-sm">
               <thead>
@@ -127,18 +127,26 @@ export default function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                {summary.recentTransactions.map((txn) => (
-                  <tr key={txn.id} className="border-t border-slate-100">
-                    <td className="py-2.5 font-medium text-blue-600">{txn.transactionRefId}</td>
-                    <td className="py-2.5 text-slate-700">{txn.entity}</td>
-                    <td className="py-2.5 text-slate-500">{txn.date}</td>
-                    <td className="py-2.5 text-slate-700">{formatCurrency(txn.amount)}</td>
-                    <td className="py-2.5">
-                      <StatusBadge status={txn.status} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+  {summary.recentPayments.map((payment) => (
+    <tr key={payment.id} className="border-t border-slate-100">
+      <td className="py-2.5 font-medium text-blue-600">
+        {payment.reference}
+      </td>
+      <td className="py-2.5 text-slate-700">
+        {payment.payer}
+      </td>
+      <td className="py-2.5 text-slate-500">
+        {payment.date}
+      </td>
+      <td className="py-2.5 text-slate-700">
+        {formatCurrency(payment.amount)}
+      </td>
+      <td className="py-2.5">
+        <StatusBadge status={payment.status} />
+      </td>
+    </tr>
+  ))}
+</tbody>
             </table>
           </div>
 
@@ -169,12 +177,12 @@ export default function Dashboard() {
                 <p className="text-xs text-slate-400">Total Value</p>
                 <p className="text-lg font-semibold text-slate-900">{formatCurrency(summary.totalInvoiceValue)}</p>
               </div>
-              <button
+              {/* <button
                 type="button"
                 className="rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white hover:bg-blue-700"
               >
                 Generate Report
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -182,9 +190,9 @@ export default function Dashboard() {
         <div className="rounded-xl border border-slate-200 bg-white p-4">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-slate-900">Recent Payments</h2>
-            <button type="button" className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50">
+            {/* <button type="button" className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50">
               Export CSV
-            </button>
+            </button> */}
           </div>
           <table className="w-full text-left text-sm">
             <thead>

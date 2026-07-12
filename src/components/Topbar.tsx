@@ -14,7 +14,7 @@ export default function Topbar({ title, searchPlaceholder, searchValue, onSearch
     <header className="flex items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
       <h1 className="whitespace-nowrap text-lg font-semibold text-slate-900">{title}</h1>
 
-      {searchPlaceholder !== undefined && (
+      {/* {searchPlaceholder !== undefined && (
         <div className="relative w-full max-w-md">
           <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
@@ -25,7 +25,7 @@ export default function Topbar({ title, searchPlaceholder, searchValue, onSearch
             className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-700 placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-100"
           />
         </div>
-      )}
+      )} */}
 
       <div className="flex items-center gap-3">
         <button type="button" aria-label="Notifications" className="rounded-full p-2 text-slate-500 hover:bg-slate-50">
