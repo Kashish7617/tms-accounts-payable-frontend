@@ -77,9 +77,39 @@ Errors are expected as JSON:
 
 ## Setup
 
+Install dependencies:
+
+```bash
+npm install
+```
+
+Install the required UI package:
+
 ```bash
 npm install lucide-react
 ```
+
+Set the API base URL in your `.env`:
+
+```env
+VITE_API_BASE_URL=https://your-backend.example.com/api
+```
+
+## Run the Project
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+Then render `<App />` from your entry point, or import individual screens directly if you already have your own router/layout.
 
 (`react`, `react-dom`, and TypeScript are assumed to already be in your project.)
 
