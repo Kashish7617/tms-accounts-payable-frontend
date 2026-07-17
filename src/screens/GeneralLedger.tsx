@@ -252,7 +252,7 @@ function CreateTransactionModal({ onClose, onCreated }: { onClose: () => void; o
       description: form.description.trim(),
       debitAccountId: form.debitAccountId,
       creditAccountId: form.creditAccountId,
-      amount: Math.round(Number(form.amount) * 100),
+      amount: Number(form.amount),
     };
 
     setSubmitting(true);

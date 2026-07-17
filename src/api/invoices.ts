@@ -76,7 +76,7 @@ function normalizeInvoice(raw: any): Invoice {
   );
   
   const remainingAmount = Number(
-    invoice.remaining_amount_cents ??
+    invoice.remaining_balance_cents ??
     invoice.remainingAmount ??
     Math.max(amount - paidAmount, 0)
   );
