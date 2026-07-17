@@ -130,6 +130,7 @@ export default function GeneralLedger() {
                     </td>
                     <td className="px-4 py-3 font-medium text-slate-800">
                       {formatCurrency(entry.amount, entry.currency)}
+                      {/* {entry.amount} */}
                       <span className="ml-1 text-xs text-slate-400">{entry.currency}</span>
                     </td>
                     <td className="px-4 py-3 text-slate-500">{entry.date}</td>

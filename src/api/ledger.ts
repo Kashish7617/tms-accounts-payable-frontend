@@ -42,7 +42,7 @@ const mapTransaction = (raw: ApiTransaction): LedgerEntry => {
     description: raw.description,
     debitAccount: debit?.accounts?.name ?? "—",
     creditAccount: credit?.accounts?.name ?? "—",
-    amount: raw.total_amount_cents / 100,
+    amount: raw.total_amount_cents,
     currency: debit?.accounts?.currency ?? credit?.accounts?.currency ?? "USD",
     date: new Date(raw.created_at).toLocaleDateString("en-IN"),
     status: "Posted",
